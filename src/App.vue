@@ -55,8 +55,8 @@ html, body, #app {
 .content {
   position: relative;
   display: flex;
+  padding-top: 2rem;
   flex-direction: column;
-  padding: 2rem 2rem 0 2rem;
   background-color: #29b6f6;
   border-bottom: solid 2px #0182b0;
 }
