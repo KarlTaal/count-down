@@ -24,7 +24,7 @@ export default {
   data() {
     return {
       currentTime: new Date(),
-      countDownFrom: new Date(2023, 7, 17, 0, 0),
+      countDownFrom: new Date(2023, 7, 15, 12, 30),
       countDownTo: new Date(2023, 7, 25, 18, 30),
     }
   },
