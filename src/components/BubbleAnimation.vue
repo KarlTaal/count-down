@@ -1,14 +1,14 @@
 <template>
-  <div class="bubbles">
+  <div class="bubbles" :class="{'nogenen-active' : isPaavoNogenenActive}">
+    <div class="bubble"></div>
+    <div class="bubble" @click="activatePaavoNogenen()"></div><!-- small -->
     <div class="bubble"></div>
     <div class="bubble"></div>
     <div class="bubble"></div>
     <div class="bubble"></div>
     <div class="bubble"></div>
     <div class="bubble"></div>
-    <div class="bubble"></div>
-    <div class="bubble"></div>
-    <div class="bubble"></div>
+    <div class="bubble" @click="activatePaavoNogenen()"></div><!-- small -->
     <div class="bubble"></div>
   </div>
 </template>
@@ -18,13 +18,30 @@
 
 
 export default {
-  name: "bubble-animation"
+  name: "bubble-animation",
+  data() {
+    return {
+      isPaavoNogenenActive: false,
+    }
+  },
+  methods: {
+    activatePaavoNogenen() {
+      this.isPaavoNogenenActive = true;
+    }
+  },
 }
 
 
 </script>
 
 <style scoped>
+.nogenen-active {
+  .bubble {
+    background-image: url('../assets/images/nogenen.png') !important;
+    background-size: cover !important;
+  }
+}
+
 .bubbles {
   position: absolute;
   width: 100%;
@@ -57,7 +74,7 @@ export default {
   width: 20px;
   height: 20px;
   left: 20%;
-  animation-duration: 5s;
+  animation-duration: 8s;
   animation-delay: 1s;
 }
 
@@ -113,7 +130,7 @@ export default {
   width: 15px;
   height: 15px;
   left: 70%;
-  animation-duration: 5s;
+  animation-duration: 9s;
   animation-delay: 1s;
 }
 
