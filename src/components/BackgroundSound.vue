@@ -1,7 +1,7 @@
 <template>
   <button @click="togglePlayMute()">
-    <img v-if="isBackgroundSoundPlaying" src="../assets/images/play-sound.png" alt="Play sound">
-    <img v-if="!isBackgroundSoundPlaying" src="../assets/images/mute.png" alt="Mute sound">
+    <img v-show="isBackgroundSoundPlaying" src="../assets/images/play-sound.png" alt="Play sound">
+    <img v-show="!isBackgroundSoundPlaying" src="../assets/images/mute.png" alt="Mute sound">
   </button>
 </template>
 
