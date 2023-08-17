@@ -1,4 +1,5 @@
 <template>
+  <BackgroundSound/>
   <BubbleAnimation/>
   <div class="content">
     <CountDown
@@ -17,10 +18,11 @@
 import CountDown from "@/components/CountDown.vue";
 import BoatSimulator from "@/components/BoatSimulator.vue";
 import BubbleAnimation from "@/components/BubbleAnimation.vue";
+import BackgroundSound from "@/components/BackgroundSound.vue";
 
 export default {
   name: 'App',
-  components: {BubbleAnimation, BoatSimulator, CountDown},
+  components: {BackgroundSound, BubbleAnimation, BoatSimulator, CountDown},
   data() {
     return {
       currentTime: new Date(),
@@ -31,13 +33,10 @@ export default {
   created() {
     this.startCurrentTimeTick();
   },
-
   methods: {
     startCurrentTimeTick() {
-      setInterval(() => {
-        this.currentTime = new Date();
-      }, 1000)
-    }
+      setInterval(() => this.currentTime = new Date(), 1000);
+    },
   }
 }
 </script>

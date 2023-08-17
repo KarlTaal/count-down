@@ -6,7 +6,7 @@
       </div>
       <div class="boat-overlay-container">
         <div class="boat">
-          <img src="../assets/images/tallink-ship.png" alt="Ship image"/>
+          <img @click="playBoatHornSound()" src="../assets/images/tallink-ship.png" alt="Ship image"/>
         </div>
       </div>
       <div class="boat-finish">
@@ -19,6 +19,8 @@
 
 
 <script>
+
+import boatHornSound from "@/assets/sounds/boat-horn.mp3";
 
 export default {
   name: "boat-simulator",
@@ -35,6 +37,18 @@ export default {
       type: Date,
       required: true
     },
+  },
+  data() {
+    return {
+      boatHornAudio: new Audio(boatHornSound),
+    }
+  },
+  methods: {
+    playBoatHornSound() {
+      this.boatHornAudio.play().catch(() => {
+        console.error('Unable to play boat horn')
+      });
+    }
   },
   computed: {
     marginPercentageDoneFromStartToEnd() {
@@ -66,6 +80,7 @@ $flag-size: 4vw;
 .boat-start, .boat-finish {
   width: $flag-size;
   height: $flag-size;
+
   img {
     width: $flag-size;
     height: $flag-size;
@@ -103,6 +118,10 @@ $flag-size: 4vw;
       width: $boat-width;
       max-height: $boat-height;
       height: $boat-height;
+
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 }
