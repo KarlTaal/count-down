@@ -1,15 +1,15 @@
 <template>
   <div class="bubbles" :class="{'nogenen-active' : isPaavoNogenenActive}">
     <div class="bubble"></div>
-    <div class="bubble" @click="activatePaavoNogenen()"></div><!-- small -->
+    <div class="bubble" @click="activatePaavoNogenen()"></div>
     <div class="bubble"></div>
+    <div class="bubble" @click="activatePaavoNogenen()"></div>
     <div class="bubble"></div>
+    <div class="bubble" @click="activatePaavoNogenen()"></div>
     <div class="bubble"></div>
+    <div class="bubble" @click="activatePaavoNogenen()"></div>
     <div class="bubble"></div>
-    <div class="bubble"></div>
-    <div class="bubble"></div>
-    <div class="bubble" @click="activatePaavoNogenen()"></div><!-- small -->
-    <div class="bubble"></div>
+    <div class="bubble" @click="activatePaavoNogenen()"></div>
   </div>
 </template>
 
