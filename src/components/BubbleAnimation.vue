@@ -1,6 +1,6 @@
 <template>
   <div class="bubbles" :class="{'nogenen-active' : isPaavoNogenenActive}">
-    <div class="bubble">{{ isPaavoNogenenActive }}</div>
+    <div class="bubble"></div>
     <div class="bubble"></div>
     <div class="bubble"></div>
     <div class="bubble"></div>
@@ -43,7 +43,7 @@ export default {
 
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .nogenen-active {
   .bubble {
     background-image: url('../assets/images/nogenen.png') !important;
