@@ -1,6 +1,6 @@
 <template>
   <div class="bubbles" :class="{'nogenen-active' : isPaavoNogenenActive}">
-    <div class="bubble"></div>
+    <div class="bubble">{{ isPaavoNogenenActive }}</div>
     <div class="bubble"></div>
     <div class="bubble"></div>
     <div class="bubble"></div>
