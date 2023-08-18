@@ -1,15 +1,15 @@
 <template>
   <div class="bubbles" :class="{'nogenen-active' : isPaavoNogenenActive}">
     <div class="bubble"></div>
+    <div class="bubble" @click="activatePaavoNogenen()"></div>
     <div class="bubble"></div>
+    <div class="bubble" @click="activatePaavoNogenen()"></div>
     <div class="bubble"></div>
+    <div class="bubble" @click="activatePaavoNogenen()"></div>
     <div class="bubble"></div>
+    <div class="bubble" @click="activatePaavoNogenen()"></div>
     <div class="bubble"></div>
-    <div class="bubble"></div>
-    <div class="bubble"></div>
-    <div class="bubble"></div>
-    <div class="bubble"></div>
-    <div class="bubble"></div>
+    <div class="bubble" @click="activatePaavoNogenen()"></div>
   </div>
 </template>
 
@@ -19,25 +19,16 @@
 
 export default {
   name: "bubble-animation",
-  props: {
-    currentTime: {
-      type: Date,
-      required: true
-    },
-    countDownTo: {
-      type: Date,
-      required: true
-    },
-  },
-  computed: {
-    isPaavoNogenenActive() {
-      const secondsFromCurrentTimeToEnd = Math.max(0, (this.countDownTo.getTime() - this.currentTime.getTime()) / 1000);
-      const hours = Math.floor(secondsFromCurrentTimeToEnd / 3600);
-      const minutes = Math.floor((secondsFromCurrentTimeToEnd - (hours * 3600)) / 60);
-      const seconds = Math.floor((secondsFromCurrentTimeToEnd - (hours * 3600)) - (minutes * 60));
-      return seconds < 10;
+  data() {
+    return {
+      isPaavoNogenenActive: false,
     }
-  }
+  },
+  methods: {
+    activatePaavoNogenen() {
+      this.isPaavoNogenenActive = true;
+    }
+  },
 }
 
 
