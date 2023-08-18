@@ -1,6 +1,9 @@
 <template>
   <BackgroundSound/>
-  <BubbleAnimation/>
+  <BubbleAnimation
+        v-bind:current-time="currentTime"
+        v-bind:count-down-to="countDownTo"
+  />
   <div class="content">
     <CountDown
         v-bind:current-time="currentTime"
